@@ -1,0 +1,255 @@
+/*
+ * This file overrides MaterializeCSS styles
+ */
+
+@font-face {
+  font-family: 'pacifico';
+  src:  url('../fonts/pacifico/Pacifico.ttf') format('truetype'),
+        url('../fonts/pacifico/Pacifico.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class*="pacifico-font"] {
+  /* !important prevents issues with browser extensions that change fonts */
+  font-family: 'pacifico' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  /*line-height: 1;*/
+
+  /* for better font rendering... */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+nav .brand-logo {top: -0.3rem;}
+
+.icon-block {
+  padding: 0 15px;
+}
+
+.icon-block .material-icons {
+	font-size: inherit;
+}
+
+html {
+	font-family: 'Roboto', 'Open Sans', sans-serif;
+}
+
+h3 {margin-top: 0;}
+
+form textarea#message {
+	min-height: 8rem;
+}
+
+header .flex-container {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	overflow: hidden;
+}
+
+header .flex-item:nth-child(1) {
+	flex: 4;
+}
+
+header .flex-item:nth-child(2) {
+	flex: 8;
+}
+
+#page-header {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+
+#about-me {text-align: justify;}
+
+/* ~~~~ PORTFOLIO STYLES ~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.works-header-image {padding: 0 2rem;}
+
+#works h3 a {color: rgba(0, 0, 0, 0.87);}
+#works h3 a i {color: #039be5;}
+
+.works-item {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	overflow: hidden;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.works-item > .flex-item {
+	align-self: flex-start;
+	padding: 2rem;
+}
+
+.works-item > .flex-item:nth-child(1) {
+	flex: 3;
+	/*border: 1px dashed tomato;*/ /*remove this*/
+}
+
+.works-item > .flex-item:nth-child(2) {
+	flex: 7;
+	/*border: 1px dashed blue;*/ /*remove this*/
+}
+
+.btn-see-more {padding-top: 1em;}
+
+.works-item-thumbs-container {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	/*overflow: hidden;*/
+	padding-top: 2rem;
+}
+
+.works-item-thumbs-container .flex-item {
+	width: 100px;
+	padding: 0.5em;
+	border: solid 1px lightgrey;
+	margin-top: 0.5rem;
+	margin-right: 0.5rem;
+}
+
+.modal { /* default in base styles, line 5628 */
+	/*width: 80%;*/
+}
+
+/* MAKE MODAL FIT CONTENTS...
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+	.modal {
+		left: 50%;
+		transform: translate(-50%,0);
+		width: auto; /* ...or remove from materialize.css */
+		max-height: max-content;
+		/* remove left: 0; from materalize.css */
+		right: auto;
+	}
+	.modal-content {
+		display: inline-block;
+	}
+	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.modal-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	height: 24px;
+	border-radius: 50%;
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.42);
+	color: #FFFFF0;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+#contact form {
+	padding-top: 4rem;
+}
+
+#contact form * {
+	border-color: #9E9E9E;
+}
+
+#contact h2, input[type="text"],textarea {color: #D1D1CD;}
+
+#contact form button[type="submit"] {color: #FFD180;}
+
+.required-fields-info {margin: 2rem 0;}
+
+.MySocialSpots {padding-top: 4rem;}
+
+/*.MySocialSpots h2 {padding-bottom: 4rem;}*/
+
+.MySocialSpots i {
+	/*enlarge icons*/
+	font-size: 4rem;
+}
+
+.MySocialSpots .col {padding-bottom: 4rem;}
+
+.visuallyhidden {
+	/* accessibility class for icomoon's font icons that hides 
+	the span but a screen reader can still find it. */
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+						|								|								|
+"Mobile"		|		"Tablet"		|		"Desktop"		|		"Desktop (large)"
+<= 600px		|		> 600px			|			> 992px		|			> 1200px
+						|								|								|
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+
+@media only screen and (max-width: 600px) {
+	/* mobile-only styles */
+	div[class^="carousel-nav"] {width: 20%;}
+}
+
+@media only screen and (max-width: 992px) {
+	/* mobile and tablet styles */
+
+	header {text-align: center;}
+	
+	/* NOT MOBILE-FIRST, move styles to main section above 
+	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+	nav .button-collapse {float: right;}
+
+	header .flex-container {
+		/*flex-wrap: wrap;*/
+		flex-flow: column wrap;
+	}
+
+	header .flex-item:nth-child(1) {}
+
+	header .flex-item:nth-child(2) {}
+	/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+	#page-header img.headshot {
+		width: 50%;
+	}
+
+	.modal {
+    width: 80%;
+  }
+
+  .works-item {
+  	flex-flow: column wrap;
+  }
+
+  .works-item-thumbs-container .flex-item {
+  	width: 200px;
+  }
+
+}
+
+@media only screen and (min-width: 992px) {
+	/* desktop (and up) styles */
+	.section {
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+	}
+
+}
+
+@media only screen and (min-width: 1200px) {
+	/* desktop (large) styles */
+}
